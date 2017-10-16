@@ -1,5 +1,5 @@
 from sklearn.datasets import load_iris
-
+from sklearn import tree
 import pandas as pd
 import numpy as np
 
@@ -21,4 +21,9 @@ train_data = np.delete(iris.data,test_idx,axis = 0 )
 # test data 
 test_target = iris.target[test_idx]
 test_data = iris.data[test_idx]
- 
+
+
+# decision tree classifier 
+
+clf = tree.DecisionTreeClassifier()
+clf = clf.fit(train_data,train_target) 
